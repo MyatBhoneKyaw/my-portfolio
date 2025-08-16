@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio • Bootstrap</title>
+  <meta name="description" content="Personal portfolio built with Bootstrap 5" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Hero gradient background */
+    .hero {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: #fff;
+      padding: 7rem 0 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero .badge {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(6px);
+    }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.7);
+    }
+    section { scroll-margin-top: 80px; }
+    .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+  </style>
+  <script>
+    // Theme persistence: run ASAP
+    (function(){
+      const saved = localStorage.getItem('theme');
+      if(saved){ document.documentElement.setAttribute('data-bs-theme', saved); }
+    })();
+  </script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+  <!-- Navbar -->
+  <nav id="mainNav" class="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#home">MyPortfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <button id="themeToggle" class="btn btn-outline-secondary btn-sm" type="button" title="Toggle theme">
+              <i class="bi bi-sun-fill d-none" id="icon-sun"></i>
+              <i class="bi bi-moon-stars-fill" id="icon-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-8 order-2 order-md-1">
+          <span class="badge rounded-pill px-3 py-2 mb-3">Available for freelance</span>
+          <h1 class="display-4 fw-bold mb-2">Your Name</h1>
+          <p class="lead mb-4" id="typing">Web Developer • UI/UX • Freelancer</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#contact" class="btn btn-light text-primary fw-semibold"><i class="bi bi-envelope-fill me-2"></i>Hire Me</a>
+            <a href="cv.pdf" download class="btn btn-outline-light"><i class="bi bi-file-earmark-arrow-down me-2"></i>Download CV</a>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end text-center order-1 order-md-2">
+          <img class="avatar shadow-soft" src="https://picsum.photos/300?grayscale" alt="Profile" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5 text-center">
+          <img class="img-fluid rounded-4 shadow-soft" src="https://picsum.photos/600/400" alt="About image">
+        </div>
+        <div class="col-lg-7">
+          <h2 class="h1 mb-3">About Me</h2>
+          <p class="text-secondary">Hello! I'm a passionate developer specializing in building modern, responsive web apps. I love clean UI, performance, and turning ideas into delightful experiences.</p>
+          <div class="d-flex gap-3 mt-3">
+            <a class="btn btn-primary" href="#projects"><i class="bi bi-lightning-charge me-1"></i> View Projects</a>
+            <a class="btn btn-outline-primary" href="#blog"><i class="bi bi-journal-text me-1"></i> Read Blog</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-5 bg-body-tertiary border-top border-bottom">
+    <div class="container">
+      <h2 class="h1 text-center mb-4">Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="mb-2 d-flex justify-content-between"><span>HTML &amp; CSS</span><span>90%</span></div>
+          <div class="progress" role="progressbar" aria-label="HTML CSS" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width:90%"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-2 d-flex justify-content-between"><span>JavaScript</span><span>85%</span></div>
+          <div class="progress" role="progressbar" aria-label="JS" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width:85%"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mt-4 mb-2 d-flex justify-content-between"><span>React</span><span>75%</span></div>
+          <div class="progress" role="progressbar" aria-label="React" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width:75%"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mt-4 mb-2 d-flex justify-content-between"><span>Python</span><span>65%</span></div>
+          <div class="progress" role="progressbar" aria-label="Python" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width:65%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="h1 text-center mb-5">Projects</h2>
+      <div class="row g-4">
+        <!-- Project Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-soft">
+            <img src="https://picsum.photos/600/400?random=1" class="card-img-top" alt="Project 1">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Project One</h5>
+              <p class="card-text text-secondary">Short description of the project highlighting tech stack and value.</p>
+              <div class="mt-auto d-flex gap-2">
+                <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-right me-1"></i>Live</a>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#proj1Modal"><i class="bi bi-eye-fill me-1"></i>Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-soft">
+            <img src="https://picsum.photos/600/400?random=2" class="card-img-top" alt="Project 2">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Project Two</h5>
+              <p class="card-text text-secondary">Another cool thing you built, with a crisp one-line outcome.</p>
+              <div class="mt-auto d-flex gap-2">
+                <a href="#" class="btn btn-outline-primary btn-sm">Live</a>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#proj2Modal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-soft">
+            <img src="https://picsum.photos/600/400?random=3" class="card-img-top" alt="Project 3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Project Three</h5>
+              <p class="card-text text-secondary">Explain the problem, your approach, and the impact.</p>
+              <div class="mt-auto d-flex gap-2">
+                <a href="#" class="btn btn-outline-primary btn-sm">Live</a>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#proj3Modal">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modals -->
+  <div class="modal fade" id="proj1Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Project One</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://picsum.photos/1200/700?random=11" class="img-fluid rounded mb-3" alt="Project One">
+          <p>Detailed case study: goals, stack, challenges, and outcomes. Add screenshots, links, and metrics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="proj2Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Project Two</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://picsum.photos/1200/700?random=22" class="img-fluid rounded mb-3" alt="Project Two">
+          <p>Explain your role, decisions, and the resulting user impact or business value.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="proj3Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Project Three</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://picsum.photos/1200/700?random=33" class="img-fluid rounded mb-3" alt="Project Three">
+          <p>Include lessons learned, performance improvements, or code snippets if helpful.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog -->
+  <section id="blog" class="py-5 bg-body-tertiary border-top border-bottom">
+    <div class="container">
+      <h2 class="h1 text-center mb-5">Latest Blog Posts</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-soft">
+            <div class="card-body">
+              <h5 class="card-title">My Journey into Web Development</h5>
+              <p class="card-text text-secondary">How I started coding and built my first project.</p>
+              <a href="#" class="stretched-link">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-soft">
+            <div class="card-body">
+              <h5 class="card-title">Tips for Learning JavaScript</h5>
+              <p class="card-text text-secondary">Practical advice for beginners diving into JS.</p>
+              <a href="#" class="stretched-link">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-soft">
+            <div class="card-body">
+              <h5 class="card-title">Designing for Accessibility</h5>
+              <p class="card-text text-secondary">Small changes that make a big difference for users.</p>
+              <a href="#" class="stretched-link">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="h1 text-center mb-4">Contact Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" class="form-control" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" required>
+                <div class="invalid-feedback">Please provide a valid email.</div>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-control" rows="5" required></textarea>
+                <div class="invalid-feedback">Write a short message.</div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <button class="btn btn-primary" type="submit"><i class="bi bi-send-fill me-1"></i>Send</button>
+              <div class="ms-auto social fs-4">
+                <a class="text-decoration-none me-3" href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a class="text-decoration-none me-3" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a class="text-decoration-none me-3" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a class="text-decoration-none" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-body-tertiary border-top">
+    <div class="container text-center small">
+      <p class="mb-1">© <span id="year"></span> Your Name • All rights reserved</p>
+      <p class="mb-0"><a href="#home" class="text-decoration-none"><i class="bi bi-arrow-up-circle me-1"></i>Back to top</a></p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const btn = document.getElementById('themeToggle');
+    const sun = document.getElementById('icon-sun');
+    const moon = document.getElementById('icon-moon');
+    function syncIcon(){
+      const theme = document.documentElement.getAttribute('data-bs-theme');
+      if(theme === 'dark'){ sun.classList.remove('d-none'); moon.classList.add('d-none'); }
+      else { sun.classList.add('d-none'); moon.classList.remove('d-none'); }
+    }
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-bs-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-bs-theme', next);
+      localStorage.setItem('theme', next);
+      syncIcon();
+    });
+    syncIcon();
+
+    // Bootstrap form validation
+    (() => {
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    // Simple typing effect in hero
+    const roles = ['Web Developer', 'UI/UX Designer', 'Freelancer'];
+    let ri=0, ci=0, del=false; const el = document.getElementById('typing');
+    function tick(){
+      const word = roles[ri];
+      el.textContent = (del ? word.slice(0, ci--) : word.slice(0, ci++));
+      if(!del && ci>word.length+5){ del=true; }
+      if(del && ci<0){ del=false; ri=(ri+1)%roles.length; }
+      setTimeout(tick, del?70:120);
+    }
+    tick();
+  </script>
+</body>
+</html>
